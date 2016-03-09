@@ -25,7 +25,7 @@
             <!-- posts is in the object and the post in in the div -->
             <div class="column large-4 end" ng-repeat="post in posts | orderBy:'title' ">
               <div class="box">
-                <div class="image">{{post.image}}</div>
+                <div class="image"><img src="images/{{post.image}}.png" alt=""></div>
                 <div class="title">{{post.title}}</div>
                 <div class="content-small">{{post.contentSmall}}</div>
                 <div>
@@ -55,10 +55,10 @@
               <input type="text" ng-model="nuevoPost.title" placeholder="Title Post">
             </div>  
             <div>
-              <textarea name="" id="" cols="30" rows="5" ng-model="nuevoPost.contentSmall" placeholder="Content small Post"></textarea>  
+              <textarea name="" id="" cols="30" rows="5" ng-model="nuevoPost.contentSmall" placeholder="Content small Post"></textarea>
             </div> 
             <div>
-              <textarea name="" id="" cols="30" rows="5" ng-model="nuevoPost.contentLarge" placeholder="Content large Post"></textarea>  
+              <textarea name="" id="" cols="30" rows="5" ng-model="nuevoPost.contentLarge" placeholder="Content large Post"></textarea> 
             </div>  
             <div>
               <button class="button" ng-click="Save()">Save Post</button>
@@ -71,11 +71,11 @@
 
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>
-    <script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vendor/angular.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
