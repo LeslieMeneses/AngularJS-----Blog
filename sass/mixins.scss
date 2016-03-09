@@ -1,0 +1,105 @@
+@mixin mediaqs($point) {
+
+	$small: "only screen and (max-width: 40em)";
+	$medium: "only screen and (min-width: 40.063em) and (max-width: 64em)";
+	$large: "only screen and (min-width: 64.063em) and (max-width: 90em)";
+	$xlarge: "only screen and (min-width: 90.063em)";
+
+	@if $point == small {
+		@media #{$small} { @content; }
+	}
+	@else if $point == medium {
+		@media #{$medium} { @content; }
+	}
+	@else if $point == large {
+		@media #{$large} { @content; }
+	}
+	@else if $point == xlarge {
+		@media #{$xlarge} { @content; }
+	}
+}
+
+// BUTTONS BACKGROUND
+@mixin button-bg($bg) {
+	background: $bg;
+	&:hover {
+		background:darken($bg,8%);
+		transition: all 0.5s ease;
+	}
+	&:active {
+		background:darken($bg,25%);
+	}
+}
+
+// BACKGROUND ITEMS PRODUCTS
+
+
+// BORDER-RADIUS
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+}
+
+// PADDING
+@mixin padding($padding) {
+	padding: $padding;
+}
+
+@mixin margin($padding) {
+	margin: $padding;
+}
+
+@mixin title-banner {
+	color: white;
+	text-align: center;
+	font-size: 2em;
+	font-family: $Roboto-LightItalic;
+	@include mediaqs(small){
+		font-size: 1.5em;
+	}
+}
+
+@mixin title-banner-border {
+	color: white;
+	text-align: center;
+	font-size: 2em;
+	font-family: $Roboto-LightItalic;
+	margin-top: 15px;
+	@include mediaqs(small){
+		font-size: 1em;
+	}
+	span {
+		border: 3px solid white;
+		padding: 5px 50px;
+		@include mediaqs(small){
+			padding: 5px 30px;
+		}
+	}
+}
+
+@mixin banner-style {
+	background-position: center;
+	background-size: cover;
+	padding-top: 27%;
+	padding-bottom: 4%;
+}
+
+@mixin title {
+	font-family: $Roboto-Medium;
+	font-size: 1.2em;
+	color: $color-title;
+	text-align: center;
+	padding: 30px;
+}
+
+@mixin	text {
+	font-family: $Roboto-Light;
+	font-size: 1.2em;
+	color: $color-text;
+	text-align: center;
+	padding: 0px 15px;
+}
+
