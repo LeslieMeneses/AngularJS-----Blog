@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title># BLOG #</title>
+    <link rel="stylesheet" href="../css/foundation.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <!--link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,700' rel='stylesheet' type='text/css'-->
+  </head>
+  <body ng-app="app" ng-controller="CtrlPost">
+    <div class="banner">
+      <div class="row expanded">
+        <div class="column large-12">
+          <h1>BLOG - AngularJS</h1>
+        </div>
+      </div>
+    </div><!--END ROW-->
+    <div class="blog">
+      <div class="row">
+        <!-- LEFT -->
+        <div class="column large-10 small-12">
+          <div class="row">
+            <!-- posts is in the object and the post in in the div -->
+            <div class="column large-4 end" ng-repeat="post in posts | orderBy:'title' ">
+              <div>
+                <div box-post></div>
+              </div>
+            </div>
+
+          </div>
+        </div><!--END COL-->
+        <!-- RIGHT -->
+        <div class="column large-2 small-12">
+          <div class="box">
+            <label for="modal__trigger" class="button">Add Post</label>
+          </div>
+        </div>
+      </div><!--END ROW-->
+
+      <!--Start of Modal -->
+      <div class="modal">    
+        <input id="modal__trigger" type="checkbox" class="hide"/>
+        <div class="modal__overlay" role="dialog" aria-labelledby="modal__title" aria-describedby="modal_desc">
+          <div class="modal__wrap">
+            <label for="modal__trigger">&#10006;</label>
+            <h3>New Post</h3>
+            <div>
+              <input type="text" ng-model="nuevoPost.title" placeholder="Title Post">
+            </div>  
+            <div>
+              <textarea name="" id="" cols="30" rows="5" ng-model="nuevoPost.contentSmall" placeholder="Content small Post"></textarea>
+            </div> 
+            <div>
+              <textarea name="" id="" cols="30" rows="5" ng-model="nuevoPost.contentLarge" placeholder="Content large Post"></textarea> 
+            </div>  
+            <div>
+              <button class="button" ng-click="Save()">Save Post</button>
+            </div>
+          </div>
+        </div>  
+      </div><!--End of Modal -->
+
+    </div><!--END BLOG-->
+
+    <script src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/vendor/what-input.min.js"></script>
+    <script src="../js/vendor/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="../js/vendor/angular.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
